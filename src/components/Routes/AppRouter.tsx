@@ -8,6 +8,7 @@ import {
   Settings,
   ContactUs,
   AboutUs,
+  cardsData,
 } from "@/components/screens";
 import { Layout } from "@/Layout";
 
@@ -18,7 +19,7 @@ export const AppRouter = createBrowserRouter([
     children: [
       {
         path: AppRoutes.home,
-        element: <Home />,
+        element: <Home cards={cardsData} />,
       },
       {
         path: AppRoutes.inbox,
