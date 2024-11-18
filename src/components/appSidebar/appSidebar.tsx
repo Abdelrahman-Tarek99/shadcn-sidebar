@@ -10,39 +10,41 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { Link } from "react-router-dom";
+import { AppRoutes } from "@/components/Routes";
 
 // Menu items.
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: AppRoutes.home,
     icon: Home,
   },
   {
     title: "Inbox",
-    url: "#",
+    url: AppRoutes.inbox,
     icon: Inbox,
   },
   {
     title: "Calendar",
-    url: "#",
+    url: AppRoutes.calender,
     icon: Calendar,
   },
   {
     title: "Search",
-    url: "#",
+    url: AppRoutes.search,
     icon: Search,
   },
   {
     title: "Settings",
-    url: "#",
+    url: AppRoutes.settings,
     icon: Settings,
   },
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar side="right">
+    <Sidebar>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -51,10 +53,16 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link
+                      to={item.url}
+                      onClick={() => {
+                        console.log("Clicked on: ", item.title);
+                        console.log("Navigating to: ", item.url);
+                      }}
+                    >
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
