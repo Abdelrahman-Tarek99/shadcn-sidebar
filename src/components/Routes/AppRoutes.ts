@@ -4,4 +4,6 @@ export const AppRoutes = {
   calender: "/calender",
   search: "/search",
   settings: "/settings",
+  aboutUs: "/about-us",
+  contactUs: "/contact-us",
 };

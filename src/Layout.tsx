@@ -8,7 +8,9 @@ export const Layout: React.FC = () => {
       <AppSidebar />
       <main>
         <SidebarTrigger />
-        <Outlet />
+        <div className="p-6 w-full h-full overflow-hidden">
+          <Outlet />
+        </div>
       </main>
     </SidebarProvider>
   );

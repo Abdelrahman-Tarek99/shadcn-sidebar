@@ -1,6 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
-import { Home, Inbox, Calender, Search, Settings } from "@/components/screens";
+import {
+  Home,
+  Inbox,
+  Calender,
+  Search,
+  Settings,
+  ContactUs,
+  AboutUs,
+} from "@/components/screens";
 import { Layout } from "@/Layout";
 
 export const AppRouter = createBrowserRouter([
@@ -27,6 +35,14 @@ export const AppRouter = createBrowserRouter([
       {
         path: AppRoutes.settings,
         element: <Settings />,
+      },
+      {
+        path: AppRoutes.contactUs,
+        element: <ContactUs />,
+      },
+      {
+        path: AppRoutes.aboutUs,
+        element: <AboutUs />,
       },
     ],
   },

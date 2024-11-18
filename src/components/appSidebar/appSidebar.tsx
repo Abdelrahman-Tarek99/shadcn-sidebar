@@ -1,5 +1,3 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-
 import {
   Sidebar,
   SidebarContent,
@@ -7,63 +5,23 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Link } from "react-router-dom";
-import { AppRoutes } from "@/components/Routes";
+import { SideBarLayoutItems } from "@/components/appSidebar";
+import { renderSidebarItem } from "./SideBarItem";
 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: AppRoutes.home,
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: AppRoutes.inbox,
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: AppRoutes.calender,
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: AppRoutes.search,
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: AppRoutes.settings,
-    icon: Settings,
-  },
-];
-
-export function AppSidebar() {
+export const AppSidebar: React.FC = () => {
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link to={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {SideBarLayoutItems.map((item) => renderSidebarItem(item))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
   );
-}
+};
