@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface Card {
   imageUrl: string;
@@ -15,9 +16,18 @@ export const Home: React.FC<HomeProps> = ({ cards }) => {
     <div className="p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card, index) => (
-          <div
+          <motion.div
             key={index}
             className="bg-white rounded-lg shadow-md overflow-hidden transition transform hover:scale-105"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 0.2,
+              delay: 0.11,
+              ease: "linear",
+              stiffness: false,
+            }}
+            viewport={{ once: true }}
           >
             <img
               src={card.imageUrl}
@@ -28,7 +38,7 @@ export const Home: React.FC<HomeProps> = ({ cards }) => {
               <h2 className="text-lg font-bold">{card.title}</h2>
               <p className="text-sm text-gray-600 mt-2">{card.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
