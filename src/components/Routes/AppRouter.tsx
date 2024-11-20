@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
 import {
-  Inbox,
   Calender,
   Search,
   Settings,
@@ -11,6 +10,7 @@ import {
 import { Layout } from "@/Layout";
 import { lazy } from "react";
 const Home = lazy(() => import("@/components/screens/home/Home"));
+const Inbox = lazy(() => import("@/components/screens/inbox/Inbox"));
 export const AppRouter = createBrowserRouter([
   {
     path: "/",
