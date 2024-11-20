@@ -1,17 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
 import {
-  Home,
   Inbox,
   Calender,
   Search,
   Settings,
   ContactUs,
   AboutUs,
-  cardsData,
 } from "@/components/screens";
 import { Layout } from "@/Layout";
-
+import { lazy } from "react";
+const Home = lazy(() => import("@/components/screens/home/Home"));
 export const AppRouter = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +18,7 @@ export const AppRouter = createBrowserRouter([
     children: [
       {
         path: AppRoutes.home,
-        element: <Home cards={cardsData} />,
+        element: <Home />,
       },
       {
         path: AppRoutes.inbox,
