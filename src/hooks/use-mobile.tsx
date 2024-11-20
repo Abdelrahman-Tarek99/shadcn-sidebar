@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // import * as React from "react"
 
 // const MOBILE_BREAKPOINT = 768
@@ -20,7 +21,7 @@
 import * as React from "react";
 
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean>(true);
+  const [, setIsMobile] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     const onChange = () => {
