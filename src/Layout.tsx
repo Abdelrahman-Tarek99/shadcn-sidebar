@@ -6,9 +6,9 @@ export const Layout: React.FC = () => {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main>
+      <main className="w-full h-full overflow-hidden">
         <SidebarTrigger />
-        <div className="p-6 w-full h-full overflow-hidden">
+        <div className="p-6  grid place-items-center">
           <Outlet />
         </div>
       </main>
