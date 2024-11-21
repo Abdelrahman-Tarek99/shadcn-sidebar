@@ -1,16 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
-import {
-  Calender,
-  Search,
-  Settings,
-  ContactUs,
-  AboutUs,
-} from "@/components/screens";
+
 import { Layout } from "@/Layout";
 import { lazy } from "react";
 const Home = lazy(() => import("@/components/screens/home/Home"));
 const Inbox = lazy(() => import("@/components/screens/inbox/Inbox"));
+const Calender = lazy(() => import("@/components/screens/calender/Calender"));
+const Search = lazy(() => import("@/components/screens/search/Search"));
+const Settings = lazy(() => import("@/components/screens/settings/Settings"));
+const ContactUs = lazy(
+  () => import("@/components/screens/contactUs/ContactUs")
+);
+const AboutUs = lazy(() => import("@/components/screens/aboutUs/AboutUs"));
+
 export const AppRouter = createBrowserRouter([
   {
     path: "/",

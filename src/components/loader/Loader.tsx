@@ -13,8 +13,8 @@ export const Loader = () => {
       <motion.div
         style={{
           display: "block",
-          width: 200,
-          height: 200,
+          width: 50,
+          height: 50,
           borderRadius: "50%",
           backgroundColor: "royalblue",
         }}
