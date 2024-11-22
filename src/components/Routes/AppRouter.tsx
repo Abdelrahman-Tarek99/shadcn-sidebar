@@ -3,7 +3,6 @@ import { AppRoutes } from "./AppRoutes";
 import { NotFound } from "@/components/screens";
 import { Layout } from "@/Layout";
 import { lazy } from "react";
-import { ProtectedRoute } from "../wrappers/ProtectedRoute";
 const Home = lazy(() => import("@/components/screens/home/Home"));
 const Inbox = lazy(() => import("@/components/screens/inbox/Inbox"));
 const Calender = lazy(() => import("@/components/screens/calender/Calender"));
@@ -30,7 +29,7 @@ export const AppRouter = createBrowserRouter([
       },
       {
         path: AppRoutes.inbox,
-        element: <ProtectedRoute component={Inbox} />,
+        element: <Inbox />,
       },
       {
         path: AppRoutes.calender,
@@ -42,7 +41,7 @@ export const AppRouter = createBrowserRouter([
       },
       {
         path: AppRoutes.settings,
-        element: <ProtectedRoute component={Settings} />,
+        element: <Settings />,
       },
       {
         path: AppRoutes.contactUs,
