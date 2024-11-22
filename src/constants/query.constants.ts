@@ -1,0 +1,23 @@
+// Query constants used in queries and mutations
+export enum QueryCosntant {
+  USERS = "users",
+  USER = "user",
+  GROUPS = "groups",
+  USER_Details = "user_details",
+  SEARCH_USER = "search_user",
+  PARTY_CODES = "party_codes",
+  ROLES = "roles",
+  GROUP_USERS = "group_users",
+  PARTIES = "parties",
+  SITES = "locations",
+  SITEDetails = "location",
+  PARTY_DETAILS = "party_details",
+  BUSINESS_RULE = "business_rule",
+  PRODUCTS = "products",
+  CUSTOMERS = "customers",
+  EVENTS = "events",
+  CHANNELS_DATA = "channels_data",
+  LOOKUP_PARAMETERS = "lookup_parameters",
+  CHANNELS = "channels",
+  EVENT_GROUPS = "event_groups",
+}
