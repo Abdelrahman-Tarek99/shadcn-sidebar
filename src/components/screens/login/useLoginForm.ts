@@ -1,6 +1,8 @@
 import { AppRoutes } from "@/components/Routes";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import { HTTPCookies } from "@/constants";
 
 interface LoginFormInputs {
   email: string;
@@ -19,6 +21,7 @@ export const useLoginForm = () => {
 
   const onSubmit = (data: LoginFormInputs) => {
     console.log(data);
+    Cookies.set(HTTPCookies.token, "123456789");
     navigate(AppRoutes.home);
   };
 

@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     const fetchData = async () => {
       setLoading(true);
       // Simulate a delay
-      await new Promise((resolve) => setTimeout(resolve, 10000));
+      await new Promise((resolve) => setTimeout(resolve, 3000));
       setCards(initialCardsData);
       setLoading(false);
     };

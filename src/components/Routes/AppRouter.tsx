@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
-
+import { NotFound } from "@/components/screens";
 import { Layout } from "@/Layout";
 import { lazy } from "react";
+import { ProtectedRoute } from "../wrappers/ProtectedRoute";
 const Home = lazy(() => import("@/components/screens/home/Home"));
 const Inbox = lazy(() => import("@/components/screens/inbox/Inbox"));
 const Calender = lazy(() => import("@/components/screens/calender/Calender"));
@@ -20,12 +21,16 @@ export const AppRouter = createBrowserRouter([
     element: <Layout />,
     children: [
       {
+        path: AppRoutes.login,
+        element: <Login />,
+      },
+      {
         path: AppRoutes.home,
         element: <Home />,
       },
       {
         path: AppRoutes.inbox,
-        element: <Inbox />,
+        element: <ProtectedRoute component={Inbox} />,
       },
       {
         path: AppRoutes.calender,
@@ -37,7 +42,7 @@ export const AppRouter = createBrowserRouter([
       },
       {
         path: AppRoutes.settings,
-        element: <Settings />,
+        element: <ProtectedRoute component={Settings} />,
       },
       {
         path: AppRoutes.contactUs,
@@ -47,10 +52,14 @@ export const AppRouter = createBrowserRouter([
         path: AppRoutes.aboutUs,
         element: <AboutUs />,
       },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
     ],
   },
   {
-    path: AppRoutes.login,
-    element: <Login />,
+    path: "*",
+    element: <NotFound />,
   },
 ]);

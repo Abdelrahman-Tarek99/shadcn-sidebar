@@ -66,5 +66,5 @@ const SidebarItemComponent: React.FC<{ item: SidebarItem }> = ({ item }) => {
 };
 
 export function renderSidebarItem(item: SidebarItem) {
-  return <SidebarItemComponent item={item} />;
+  return <SidebarItemComponent item={item} key={item.title} />;
 }
