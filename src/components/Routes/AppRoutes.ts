@@ -1,5 +1,6 @@
 export const AppRoutes = {
   home: "/",
+  login: "/login",
   inbox: "/inbox",
   calender: "/calender",
   search: "/search",

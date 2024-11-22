@@ -12,6 +12,7 @@ const ContactUs = lazy(
   () => import("@/components/screens/contactUs/ContactUs")
 );
 const AboutUs = lazy(() => import("@/components/screens/aboutUs/AboutUs"));
+const Login = lazy(() => import("@/components/screens/login/Login"));
 
 export const AppRouter = createBrowserRouter([
   {
@@ -47,5 +48,9 @@ export const AppRouter = createBrowserRouter([
         element: <AboutUs />,
       },
     ],
+  },
+  {
+    path: AppRoutes.login,
+    element: <Login />,
   },
 ]);
